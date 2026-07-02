@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Horizonte Turismo — Portal de Turismo Local e Reserva de Passeios. Descubra praias, trilhas, museus, gastronomia e passeios históricos no Ceará.">
+  <title>Horizonte Turismo — Portal de Turismo Local</title>
+  <link rel="stylesheet" href="style.css">
+<base target="_blank">
+</head>
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header>
+    <nav aria-label="Navegação principal">
+      <a href="index.html" class="logo" aria-label="Horizonte Turismo — página inicial">
+        <div class="logo-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </div>
+        <span class="logo-text">
+          Horizonte
+          <span class="logo-sub">Turismo</span>
+        </span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="#categorias">Categorias</a></li>
+        <li><a href="#mais-procurados">Mais Procurados</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="cadastro.html" class="nav-icon-link" aria-label="Cadastrar-se">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          <span class="nav-icon-text">Cadastro</span>
+        </a>
+        <a href="roteiro.html" class="nav-icon-link" aria-label="Meu Roteiro">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+          </svg>
+          <span class="nav-icon-text">Meu Roteiro</span>
+        </a>
+      </div>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <ul role="list">
+        <li><a href="index.html" class="mobile-link">Início</a></li>
+        <li><a href="#categorias" class="mobile-link">Categorias</a></li>
+        <li><a href="#mais-procurados" class="mobile-link">Mais Procurados</a></li>
+        <li><a href="#sobre" class="mobile-link">Sobre</a></li>
+        <li><a href="#contato" class="mobile-link">Contato</a></li>
+        <li><a href="cadastro.html" class="mobile-link">Cadastro</a></li>
+        <li><a href="roteiro.html" class="mobile-link">Meu Roteiro</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ==================== HERO ==================== -->
+    <section id="inicio" aria-labelledby="hero-title">
+      <div class="hero-bg" aria-hidden="true"></div>
+
+      <div class="hero-content container">
+        <div class="hero-tag">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Portal de Turismo Local
+        </div>
+
+        <h1 class="hero-title display" id="hero-title">
+          Descubra o <span class="highlight">Ceará</span> no Seu Ritmo
+        </h1>
+
+        <p class="hero-desc">
+          Experiências únicas, destinos inesquecíveis e passeios planejados
+          para transformar momentos em memórias eternas. Explore praias, trilhas, museus e muito mais.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#categorias" class="btn-primary">
+            Explorar Categorias
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#mais-procurados" class="btn-outline">Passeios Mais Procurados</a>
+        </div>
+
+        <div class="hero-stats" aria-label="Números da empresa">
+          <div>
+            <p class="stat-value">50+</p>
+            <p class="stat-label">Passeios</p>
+          </div>
+          <div>
+            <p class="stat-value">5</p>
+            <p class="stat-label">Categorias</p>
+          </div>
+          <div>
+            <p class="stat-value">12k+</p>
+            <p class="stat-label">Viajantes</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 50 C360 0 1080 0 1440 50 L1440 50 L0 50Z" fill="#F5EDD8"/>
+        </svg>
+      </div>
+    </section>
+
+
+    <!-- ==================== CATEGORIAS ==================== -->
+    <section id="categorias" aria-labelledby="categorias-title">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">Explore por Tema</span>
+          <h2 class="section-title" id="categorias-title">Categorias de <span class="highlight">Passeios</span></h2>
+          <p class="section-desc">Escolha uma categoria e descubra os melhores destinos do Ceará.</p>
+        </header>
+
+        <div class="cards-grid categorias-grid">
+
+          <article class="categoria-card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=280&fit=crop" alt="Praia de Jericoacoara com dunas e coqueiros" width="400" height="280">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Praias</h3>
+              <p class="card-desc">Descubra as praias mais paradisíacas do Ceará, desde Jericoacoara até Canoa Quebrada.</p>
+              <a href="categoria.html?id=1" class="card-btn">Ver Passeios</a>
+            </div>
+          </article>
+
+          <article class="categoria-card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=400&h=280&fit=crop" alt="Trilha em meio à vegetação do Ceará" width="400" height="280">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Trilhas</h3>
+              <p class="card-desc">Aventure-se pelas trilhas da Chapada do Araripe e Serra de Baturité.</p>
+              <a href="categoria.html?id=2" class="card-btn">Ver Passeios</a>
+            </div>
+          </article>
+
+          <article class="categoria-card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1566127444979-b3d2b654e3d7?w=400&h=280&fit=crop" alt="Interior de museu com obras de arte" width="400" height="280">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Museus</h3>
+              <p class="card-desc">Conheça a história e cultura cearense nos museus de Fortaleza e região.</p>
+              <a href="categoria.html?id=3" class="card-btn">Ver Passeios</a>
+            </div>
+          </article>
+
+          <article class="categoria-card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=280&fit=crop" alt="Prato típico da culinária cearense" width="400" height="280">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Gastronomia</h3>
+              <p class="card-desc">Saboreie a autêntica culinária cearense: tapioca, baião de dois e peixada.</p>
+              <a href="categoria.html?id=4" class="card-btn">Ver Passeios</a>
+            </div>
+          </article>
+
+          <article class="categoria-card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&h=280&fit=crop" alt="Centro histórico com arquitetura colonial" width="400" height="280">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Passeios Históricos</h3>
+              <p class="card-desc">Explore o Centro Histórico de Fortaleza, igrejas coloniais e monumentos.</p>
+              <a href="categoria.html?id=5" class="card-btn">Ver Passeios</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== 5 MAIS PROCURADOS ==================== -->
+    <section id="mais-procurados" aria-labelledby="mais-procurados-title">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">Os Favoritos</span>
+          <h2 class="section-title" id="mais-procurados-title">5 Passeios <span class="highlight">Mais Procurados</span></h2>
+          <p class="section-desc">Os destinos mais reservados pelos nossos viajantes.</p>
+        </header>
+
+        <div class="cards-grid passeios-grid">
+
+          <article class="passeio-card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?w=300&h=400&fit=crop" alt="Praia de Jericoacoara ao pôr do sol" width="300" height="400">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Jericoacoara</h3>
+              <p class="card-author">Jijoca de Jericoacoara — CE</p>
+              <div class="card-rating" aria-label="Avaliação 4.9 de 5 estrelas">
+                <span class="stars" aria-hidden="true">★★★★★</span>
+                <span class="rating-value">4.9</span>
+              </div>
+              <a href="detalhes.html?id=1" class="card-link">Ver detalhes →</a>
+            </div>
+          </article>
+
+          <article class="passeio-card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1520942702018-0865209d747d?w=300&h=400&fit=crop" alt="Dunas de Canoa Quebrada" width="300" height="400">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Canoa Quebrada</h3>
+              <p class="card-author">Aracati — CE</p>
+              <div class="card-rating" aria-label="Avaliação 4.8 de 5 estrelas">
+                <span class="stars" aria-hidden="true">★★★★★</span>
+                <span class="rating-value">4.8</span>
+              </div>
+              <a href="detalhes.html?id=2" class="card-link">Ver detalhes →</a>
+            </div>
+          </article>
+
+          <article class="passeio-card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=300&h=400&fit=crop" alt="Centro Dragão do Mar" width="300" height="400">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Centro Dragão do Mar</h3>
+              <p class="card-author">Fortaleza — CE</p>
+              <div class="card-rating" aria-label="Avaliação 4.7 de 5 estrelas">
+                <span class="stars" aria-hidden="true">★★★★★</span>
+                <span class="rating-value">4.7</span>
+              </div>
+              <a href="detalhes.html?id=3" class="card-link">Ver detalhes →</a>
+            </div>
+          </article>
+
+          <article class="passeio-card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=300&h=400&fit=crop" alt="Mercado dos Peixes em Fortaleza" width="300" height="400">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Mercado dos Peixes</h3>
+              <p class="card-author">Fortaleza — CE</p>
+              <div class="card-rating" aria-label="Avaliação 4.6 de 5 estrelas">
+                <span class="stars" aria-hidden="true">★★★★★</span>
+                <span class="rating-value">4.6</span>
+              </div>
+              <a href="detalhes.html?id=4" class="card-link">Ver detalhes →</a>
+            </div>
+          </article>
+
+          <article class="passeio-card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=300&h=400&fit=crop" alt="Trilha da Serra de Baturité" width="300" height="400">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Serra de Baturité</h3>
+              <p class="card-author">Baturité — CE</p>
+              <div class="card-rating" aria-label="Avaliação 4.8 de 5 estrelas">
+                <span class="stars" aria-hidden="true">★★★★★</span>
+                <span class="rating-value">4.8</span>
+              </div>
+              <a href="detalhes.html?id=5" class="card-link">Ver detalhes →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== SOBRE ==================== -->
+    <section id="sobre" aria-labelledby="sobre-title">
+      <div class="container">
+        <div class="sobre-grid">
+          <div class="sobre-img-wrap">
+            <div class="sobre-img-frame" aria-hidden="true"></div>
+            <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=600&h=460&fit=crop" alt="Praia paradisíaca do Ceará com águas cristalinas" width="600" height="460">
+            <div class="sobre-badge" aria-label="15 anos de experiência">
+              <p class="sobre-badge-num display">15 anos</p>
+              <p class="sobre-badge-sub">de experiência</p>
+            </div>
+          </div>
+
+          <div class="sobre-text">
+            <span class="section-tag">Quem somos</span>
+            <h2 class="section-title" id="sobre-title">
+              Bem-vindo à <span class="highlight" style="color:#D4522A;">Horizonte</span> Turismo
+            </h2>
+            <p>Somos especialistas em criar roteiros personalizados, viagens nacionais e internacionais, hospedagens exclusivas e experiências que vão muito além do turismo tradicional no estado do Ceará.</p>
+            <p>Cada viagem é planejada com cuidado, pensando no seu perfil, seus sonhos e o melhor custo-benefício — porque viajar bem é uma arte, e nós dominamos esse ofício.</p>
+
+            <ul class="sobre-list" role="list" aria-label="Nossos diferenciais">
+              <li class="sobre-item">
+                <span class="check-icon" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                Roteiros 100% personalizados ao seu perfil
+              </li>
+              <li class="sobre-item">
+                <span class="check-icon" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                Parceiros homologados em todo o Ceará
+              </li>
+              <li class="sobre-item">
+                <span class="check-icon" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                Atendimento exclusivo pré e pós-viagem
+              </li>
+              <li class="sobre-item">
+                <span class="check-icon" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                Seguro viagem incluso em todos os pacotes
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== SERVIÇOS ==================== -->
+    <section id="servicos" aria-labelledby="servicos-title">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">O que oferecemos</span>
+          <h2 class="section-title" id="servicos-title">Nossos <span class="highlight">Serviços</span></h2>
+        </header>
+
+        <div class="cards-grid">
+          <article class="service-card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=400&h=220&fit=crop" alt="Mapa de roteiros personalizados com destinos marcados" width="400" height="220">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Roteiros Personalizados</h3>
+              <p class="card-desc">Planejamos cada detalhe da sua viagem com base no seu perfil, interesses e orçamento. Seu roteiro, do jeito que você sonhou.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=220&fit=crop" alt="Resort tropical de luxo com piscina infinita" width="400" height="220">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Hospedagens Premium</h3>
+              <p class="card-desc">Selecionamos as melhores pousadas, hotéis boutique e resorts para garantir conforto e experiências únicas em cada destino.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=400&h=220&fit=crop" alt="Pacote de viagem completo" width="400" height="220">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Pacotes Exclusivos</h3>
+              <p class="card-desc">Pacotes completos com transporte, hospedagem, transfers e passeios guiados. Tudo resolvido em um só lugar.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== CONTATO ==================== -->
+    <section id="contato" aria-labelledby="contato-title">
+      <div class="container">
+        <div class="contato-grid">
+          <div class="contato-info">
+            <span class="section-tag">Entre em Contato</span>
+            <h2 class="section-title" id="contato-title">
+              Vamos Planejar Sua Próxima Viagem
+            </h2>
+            <p>
+              Entre em contato conosco e receba um orçamento personalizado
+              para a sua próxima aventura pelo Ceará.
+            </p>
+            <ul class="contato-list">
+              <li>Itapajé — Ceará</li>
+              <li>(88) 99999-9999</li>
+              <li>contato@horizonteturismo.com</li>
+            </ul>
+          </div>
+
+          <form class="contact-form" action="#" method="GET">
+            <input type="text" name="nome" placeholder="Seu nome" required>
+            <input type="email" name="email" placeholder="Seu e-mail" required>
+            <input type="tel" name="telefone" placeholder="Seu telefone">
+            <textarea name="mensagem" rows="6" placeholder="Conte-nos sobre a viagem que você deseja"></textarea>
+            <button type="submit" class="btn-primary">Solicitar Orçamento</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="container footer-content">
+      <div>
+        <h3 class="footer-logo display">Horizonte Turismo</h3>
+        <p class="footer-desc">
+          Criando experiências inesquecíveis e conectando pessoas aos
+          melhores destinos do Ceará e do mundo.
+        </p>
+      </div>
+      <div>
+        <h4>Links Rápidos</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="#categorias">Categorias</a></li>
+          <li><a href="#mais-procurados">Mais Procurados</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+          <li><a href="roteiro.html">Meu Roteiro</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Institucional</h4>
+        <ul class="footer-links">
+          <li><a href="#sobre">Quem somos</a></li>
+          <li><a href="#">Missão e visão</a></li>
+          <li><a href="#">Política de privacidade</a></li>
+          <li><a href="#">Termos de uso</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul class="footer-links">
+          <li>contato@horizonteturismo.com</li>
+          <li>(88) 99999-9999</li>
+          <li>Itapajé — CE</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Horizonte Turismo. Todos os direitos reservados. | Universidade Federal do Ceará — Programação Web
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

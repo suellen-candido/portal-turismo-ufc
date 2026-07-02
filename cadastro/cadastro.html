@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cadastro — Horizonte Turismo. Crie sua conta e comece a planejar seus passeios pelo Ceará.">
+  <title>Cadastro de Visitante — Horizonte Turismo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cadastro.css">
+<base target="_blank">
+</head>
+<body class="cadastro-page">
+
+  <!-- ==================== HEADER SIMPLES ==================== -->
+  <header class="cadastro-header">
+    <a href="index.html" class="logo" aria-label="Horizonte Turismo — voltar para página inicial">
+      <div class="logo-icon" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="2" y1="12" x2="22" y2="12"/>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+      </div>
+      <span class="logo-text">
+        Horizonte
+        <span class="logo-sub">Turismo</span>
+      </span>
+    </a>
+  </header>
+
+  <!-- ==================== MAIN CADASTRO ==================== -->
+  <main class="cadastro-main">
+    <div class="cadastro-container">
+
+      <!-- Lado esquerdo: imagem/ilustração -->
+      <div class="cadastro-visual" aria-hidden="true">
+        <div class="cadastro-visual-content">
+          <h2 class="cadastro-visual-title display">Junte-se a nós!</h2>
+          <p class="cadastro-visual-text">
+            Cadastre-se gratuitamente e tenha acesso a roteiros exclusivos,
+            promoções especiais e a melhor experiência de turismo no Ceará.
+          </p>
+          <ul class="cadastro-benefits">
+            <li>
+              <span class="cadastro-check">✓</span>
+              Roteiros personalizados
+            </li>
+            <li>
+              <span class="cadastro-check">✓</span>
+              Reservas simplificadas
+            </li>
+            <li>
+              <span class="cadastro-check">✓</span>
+              Atendimento prioritário
+            </li>
+            <li>
+              <span class="cadastro-check">✓</span>
+              Descontos exclusivos
+            </li>
+          </ul>
+        </div>
+        <div class="cadastro-visual-overlay"></div>
+      </div>
+
+      <!-- Lado direito: formulário -->
+      <div class="cadastro-form-wrapper">
+        <div class="cadastro-form-header">
+          <h1 class="cadastro-form-title">Cadastro de Visitante</h1>
+          <p class="cadastro-form-subtitle">
+            Já tem conta?
+            <a href="login.html" class="cadastro-link">Entrar</a>
+          </p>
+        </div>
+
+        <!-- Alerta geral -->
+        <div class="cadastro-alert cadastro-alert-error" id="cadastro-alert" role="alert" aria-live="polite">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+          <span id="cadastro-alert-text"></span>
+        </div>
+
+        <form id="cadastro-form" class="cadastro-form" action="#" method="GET" novalidate>
+
+          <!-- ==================== DADOS PESSOAIS ==================== -->
+          <fieldset class="cadastro-fieldset">
+            <legend class="cadastro-legend">Dados Pessoais</legend>
+
+            <div class="cadastro-row">
+              <!-- Nome Completo -->
+              <div class="cadastro-field-group cadastro-field-large">
+                <label for="cad-nome" class="cadastro-label">
+                  Nome Completo
+                  <span class="cadastro-required">*</span>
+                </label>
+                <div class="cadastro-input-wrap">
+                  <span class="cadastro-input-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                      <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                  </span>
+                  <input
+                    type="text"
+                    id="cad-nome"
+                    name="nome"
+                    class="cadastro-input"
+                    placeholder="Digite seu nome completo"
+                    autocomplete="name"
+                    required
+                  >
+                </div>
+                <span class="cadastro-error" id="error-nome"></span>
+              </div>
+            </div>
+
+            <div class="cadastro-row">
+              <!-- CPF -->
+              <div class="cadastro-field-group">
+                <label for="cad-cpf" class="cadastro-label">
+                  CPF
+                  <span class="cadastro-required">*</span>
+                </label>
+                <div class="cadastro-input-wrap">
+                  <span class="cadastro-input-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="4" width="18" height="16" rx="2"/>
+                      <line x1="8" y1="2" x2="8" y2="6"/>
+                      <line x1="16" y1="2" x2="16" y2="6"/>
+                      <line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                  </span>
+                  <input
+                    type="text"
+                    id="cad-cpf"
+                    name="cpf"
+                    class="cadastro-input"
+                    placeholder="000.000.000-00"
+                    maxlength="14"
+                    autocomplete="off"
+                    required
+                  >
+                </div>
+                <span class="cadastro-error" id="error-cpf"></span>
+              </div>
+
+              <!-- Telefone -->
+              <div class="cadastro-field-group">
+                <label for="cad-telefone" class="cadastro-label">
+                  Telefone
+                  <span class="cadastro-required">*</span>
+                </label>
+                <div class="cadastro-input-wrap">
+                  <span class="cadastro-input-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                  </span>
+                  <input
+                    type="tel"
+                    id="cad-telefone"
+                    name="telefone"
+                    class="cadastro-input"
+                    placeholder="(00) 00000-0000"
+                    maxlength="15"
+                    autocomplete="tel"
+                    required
+                  >
+                </div>
+                <span class="cadastro-error" id="error-telefone"></span>
+              </div>
+            </div>
+
+            <div class="cadastro-row">
+              <!-- E-mail -->
+              <div class="cadastro-field-group cadastro-field-large">
+                <label for="cad-email" class="cadastro-label">
+                  E-mail
+                  <span class="cadastro-required">*</span>
+                </label>
+                <div class="cadastro-input-wrap">
+                  <span class="cadastro-input-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                      <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                  </span>
+                  <input
+                    type="email"
+                    id="cad-email"
+                    name="email"
+                    class="cadastro-input"
+                    placeholder="seu@email.com"
+                    autocomplete="email"
+                    required
+                  >
+                </div>
+                <span class="cadastro-error" id="error-email"></span>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- ==================== ENDEREÇO ==================== -->
+          <fieldset class="cadastro-fieldset">
+            <legend class="cadastro-legend">Endereço</legend>
+
+            <div class="cadastro-row">
+              <!-- Endereço -->
+              <div class="cadastro-field-group cadastro-field-large">
+                <label for="cad-endereco" class="cadastro-label">
+                  Endereço
+                  <span class="cadastro-required">*</span>
+                </label>
+                <div class="cadastro-input-wrap">
+                  <span class="cadastro-input-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                      <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                  </span>
+                  <input
+                    type="text"
+                    id="cad-endereco"
+                    name="endereco"
+                    class="cadastro-input"
+                    placeholder="Rua, número, bairro"
+                    autocomplete="street-address"
+                    required
+                  >
+                </div>
+                <span class="cadastro-error" id="error-endereco"></span>
+              </div>
+            </div>
+
+            <div class="cadastro-row">
+              <!-- Cidade -->
+              <div class="cadastro-field-group">
+                <label for="cad-cidade" class="cadastro-label">
+                  Cidade
+                  <span class="cadastro-required">*</span>
+                </label>
+                <div class="cadastro-input-wrap">
+                  <span class="cadastro-input-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                      <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                  </span>
+                  <input
+                    type="text"
+                    id="cad-cidade"
+                    name="cidade"
+                    class="cadastro-input"
+                    placeholder="Digite sua cidade"
+                    autocomplete="address-level2"
+                    required
+                  >
+                </div>
+                <span class="cadastro-error" id="error-cidade"></span>
+              </div>
+
+              <!-- Cidade de Origem -->
+              <div class="cadastro-field-group">
+                <label for="cad-cidade-origem" class="cadastro-label">
+                  Cidade de Origem
+                </label>
+                <div class="cadastro-input-wrap">
+                  <span class="cadastro-input-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"/>
+                      <line x1="2" y1="12" x2="22" y2="12"/>
+                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    </svg>
+                  </span>
+                  <input
+                    type="text"
+                    id="cad-cidade-origem"
+                    name="cidade_origem"
+                    class="cadastro-input"
+                    placeholder="De onde você vem?"
+                    autocomplete="off"
+                  >
+                </div>
+                <span class="cadastro-error" id="error-cidade-origem"></span>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- ==================== DADOS DE ACESSO ==================== -->
+          <fieldset class="cadastro-fieldset">
+            <legend class="cadastro-legend">Dados de Acesso</legend>
+
+            <div class="cadastro-row">
+              <!-- Login -->
+              <div class="cadastro-field-group">
+                <label for="cad-login" class="cadastro-label">
+                  Login
+                  <span class="cadastro-required">*</span>
+                </label>
+                <div class="cadastro-input-wrap">
+                  <span class="cadastro-input-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                      <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                  </span>
+                  <input
+                    type="text"
+                    id="cad-login"
+                    name="login"
+                    class="cadastro-input"
+                    placeholder="Escolha um nome de usuário"
+                    autocomplete="username"
+                    required
+                  >
+                </div>
+                <span class="cadastro-error" id="error-login"></span>
+              </div>
+
+              <!-- Senha -->
+              <div class="cadastro-field-group">
+                <label for="cad-senha" class="cadastro-label">
+                  Senha
+                  <span class="cadastro-required">*</span>
+                </label>
+                <div class="cadastro-input-wrap">
+                  <span class="cadastro-input-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                  </span>
+                  <input
+                    type="password"
+                    id="cad-senha"
+                    name="senha"
+                    class="cadastro-input"
+                    placeholder="Mínimo 8 caracteres"
+                    autocomplete="new-password"
+                    required
+                  >
+                  <button
+                    type="button"
+                    class="cadastro-toggle-password"
+                    id="toggle-senha"
+                    aria-label="Mostrar senha"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="eye-icon">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                      <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                  </button>
+                </div>
+                <span class="cadastro-error" id="error-senha"></span>
+              </div>
+            </div>
+
+            <div class="cadastro-row">
+              <!-- Confirmar Senha -->
+              <div class="cadastro-field-group cadastro-field-large">
+                <label for="cad-confirmar-senha" class="cadastro-label">
+                  Confirmar Senha
+                  <span class="cadastro-required">*</span>
+                </label>
+                <div class="cadastro-input-wrap">
+                  <span class="cadastro-input-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                  </span>
+                  <input
+                    type="password"
+                    id="cad-confirmar-senha"
+                    name="confirmar_senha"
+                    class="cadastro-input"
+                    placeholder="Digite a senha novamente"
+                    autocomplete="new-password"
+                    required
+                  >
+                  <button
+                    type="button"
+                    class="cadastro-toggle-password"
+                    id="toggle-confirmar"
+                    aria-label="Mostrar senha"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="eye-icon">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                      <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                  </button>
+                </div>
+                <span class="cadastro-error" id="error-confirmar-senha"></span>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- ==================== PREFERÊNCIAS DE PASSEIO ==================== -->
+          <fieldset class="cadastro-fieldset">
+            <legend class="cadastro-legend">Preferências de Passeio</legend>
+
+            <div class="cadastro-row">
+              <!-- Data Prevista da Visita -->
+              <div class="cadastro-field-group">
+                <label for="cad-data-visita" class="cadastro-label">
+                  Data Prevista da Visita
+                </label>
+                <div class="cadastro-input-wrap">
+                  <span class="cadastro-input-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="4" width="18" height="16" rx="2"/>
+                      <line x1="8" y1="2" x2="8" y2="6"/>
+                      <line x1="16" y1="2" x2="16" y2="6"/>
+                      <line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                  </span>
+                  <input
+                    type="date"
+                    id="cad-data-visita"
+                    name="data_visita"
+                    class="cadastro-input"
+                    min="2026-01-01"
+                  >
+                </div>
+                <span class="cadastro-error" id="error-data-visita"></span>
+              </div>
+            </div>
+
+            <div class="cadastro-row">
+              <!-- Preferências de Passeio -->
+              <div class="cadastro-field-group cadastro-field-large">
+                <label for="cad-preferencias" class="cadastro-label">
+                  Preferências de Passeio
+                </label>
+                <div class="cadastro-textarea-wrap">
+                  <textarea
+                    id="cad-preferencias"
+                    name="preferencias"
+                    class="cadastro-textarea"
+                    rows="3"
+                    placeholder="Conte-nos o que você gosta: praias, trilhas, museus, gastronomia, história..."
+                  ></textarea>
+                </div>
+                <span class="cadastro-error" id="error-preferencias"></span>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- ==================== TERMOS ==================== -->
+          <div class="cadastro-terms">
+            <label class="cadastro-checkbox-label">
+              <input type="checkbox" id="cad-termos" name="termos" required>
+              <span class="cadastro-checkmark"></span>
+              <span class="cadastro-terms-text">
+                Eu li e aceito os
+                <a href="#" class="cadastro-link">Termos de Uso</a>
+                e a
+                <a href="#" class="cadastro-link">Política de Privacidade</a>
+                da Horizonte Turismo.
+                <span class="cadastro-required">*</span>
+              </span>
+            </label>
+            <span class="cadastro-error" id="error-termos"></span>
+          </div>
+
+          <!-- ==================== BOTÕES ==================== -->
+          <div class="cadastro-actions">
+            <button type="reset" class="cadastro-btn cadastro-btn-secondary" id="cadastro-limpar">
+              Limpar
+            </button>
+            <button type="submit" class="cadastro-btn cadastro-btn-primary" id="cadastro-submit">
+              <span class="cadastro-btn-text">Cadastrar</span>
+              <span class="cadastro-btn-loader" aria-hidden="true"></span>
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER SIMPLES ==================== -->
+  <footer class="cadastro-footer">
+    <p>© 2026 Horizonte Turismo. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="cadastro.js"></script>
+</body>
+</html>

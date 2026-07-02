@@ -1,0 +1,347 @@
+/* =====================================================
+   HORIZONTE TURISMO — Estilos da Página de Categoria
+   Página 2: Listagem de Passeios por Categoria
+   Disciplina: Programação Web — UFC Itapajé
+===================================================== */
+
+/* ── HERO DA CATEGORIA ─────────────────────────── */
+#categoria-hero {
+  position: relative;
+  min-height: 45vh;
+  display: flex;
+  align-items: center;
+  padding: 6rem 0 3rem;
+  background: linear-gradient(135deg, #2C3E3E 0%, #1a2a2a 100%);
+  overflow: hidden;
+}
+
+.categoria-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+  transition: background-image 0.5s ease;
+}
+
+.categoria-hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  max-width: 800px;
+}
+
+.categoria-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.categoria-breadcrumb a {
+  color: #E8A04B;
+  transition: color 0.2s;
+}
+
+.categoria-breadcrumb a:hover {
+  color: #fff;
+}
+
+.categoria-breadcrumb span[aria-hidden="true"] {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.categoria-hero-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.categoria-hero-desc {
+  max-width: 600px;
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+/* ── LISTAGEM DE PASSEIOS ──────────────────────── */
+#listagem-passeios {
+  padding: 5rem 0;
+  background-color: #F5EDD8;
+  min-height: 50vh;
+}
+
+.listagem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* ── CARD DE PASSEIO (LISTAGEM) ────────────────── */
+.passeio-listagem-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.passeio-listagem-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.14);
+}
+
+.passeio-listagem-card .card-img-wrap {
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+
+.passeio-listagem-card .card-img-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.3));
+  pointer-events: none;
+}
+
+.passeio-listagem-card .card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.passeio-listagem-card:hover .card-img-wrap img {
+  transform: scale(1.08);
+}
+
+.passeio-listagem-card .card-body {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.passeio-listagem-card .card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #2C2017;
+  margin-bottom: 0.4rem;
+  line-height: 1.3;
+}
+
+.passeio-listagem-card .card-local {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: #3D7A7A;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.passeio-listagem-card .card-local svg {
+  flex-shrink: 0;
+}
+
+.passeio-listagem-card .card-desc {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.55;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.passeio-listagem-card .card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(44, 32, 23, 0.08);
+}
+
+.passeio-listagem-card .card-duracao {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: 600;
+}
+
+.passeio-listagem-card .card-valor {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #D4522A;
+}
+
+.passeio-listagem-card .card-valor span {
+  font-size: 0.75rem;
+  color: #888;
+  font-weight: 400;
+}
+
+.passeio-listagem-card .card-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.passeio-listagem-card .card-rating .stars {
+  color: #E8A04B;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.passeio-listagem-card .card-rating .rating-value {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #2C2017;
+}
+
+.passeio-listagem-card .card-btn {
+  display: block;
+  text-align: center;
+  padding: 0.75rem 1.2rem;
+  border-radius: 999px;
+  background-color: #D4522A;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  margin-top: auto;
+}
+
+.passeio-listagem-card .card-btn:hover {
+  background-color: #bf4722;
+  transform: translateY(-1px);
+}
+
+/* Badge de categoria no card */
+.passeio-listagem-card .card-categoria-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(212, 82, 42, 0.92);
+  color: #fff;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+/* ── MENSAGEM DE ERRO / VAZIO ──────────────────── */
+.mensagem-erro {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.mensagem-erro p {
+  font-size: 1.1rem;
+  color: #666;
+  font-weight: 600;
+}
+
+/* ── ESTADO DE CARREGAMENTO (SKELETON) ─────────── */
+.skeleton-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.skeleton-img {
+  height: 220px;
+  background: linear-gradient(90deg, #e8e0d0 25%, #f0ebe0 50%, #e8e0d0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+.skeleton-body {
+  padding: 1.5rem;
+}
+
+.skeleton-line {
+  height: 16px;
+  background: linear-gradient(90deg, #e8e0d0 25%, #f0ebe0 50%, #e8e0d0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+}
+
+.skeleton-line.short { width: 60%; }
+
+.skeleton-line.medium { width: 80%; }
+
+.skeleton-line.long { width: 100%; }
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── RESPONSIVIDADE ────────────────────────────── */
+@media (max-width: 1024px) {
+  .listagem-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #categoria-hero {
+    min-height: 35vh;
+    padding: 5rem 0 2rem;
+  }
+
+  .categoria-hero-title {
+    font-size: 2.2rem;
+  }
+
+  .listagem-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .passeio-listagem-card .card-img-wrap {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .categoria-hero-title {
+    font-size: 1.8rem;
+  }
+
+  .passeio-listagem-card .card-body {
+    padding: 1.2rem;
+  }
+
+  .passeio-listagem-card .card-title {
+    font-size: 1.1rem;
+  }
+}

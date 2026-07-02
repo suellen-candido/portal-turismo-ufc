@@ -1,0 +1,496 @@
+/* =====================================================
+   LOGIN — Folha de Estilos Específica
+   Horizonte Turismo — Portal de Turismo Local
+   Disciplina: Programação Web — UFC Itapajé
+===================================================== */
+
+/* ── Reset específico da página de login ───────── */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #F5EDD8;
+}
+
+.login-page body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ── Header simplificado ──────────────────────── */
+.login-header {
+  background-color: rgba(245, 237, 216, 0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(44, 32, 23, 0.1);
+  padding: 1rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.login-header .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── Main Login ───────────────────────────────── */
+.login-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+}
+
+.login-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1000px;
+  width: 100%;
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(44, 32, 23, 0.15);
+  min-height: 600px;
+}
+
+/* ── Lado visual (esquerdo) ───────────────────── */
+.login-visual {
+  position: relative;
+  background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=1000&fit=crop');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: 3rem;
+}
+
+.login-visual-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(44, 62, 62, 0.3) 0%, rgba(44, 62, 62, 0.85) 100%);
+}
+
+.login-visual-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+.login-visual-title {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.login-visual-text {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.login-visual-stats {
+  display: flex;
+  gap: 2rem;
+}
+
+.login-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-stat-num {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #E8A04B;
+}
+
+.login-stat-label {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* ── Lado formulário (direito) ────────────────── */
+.login-form-wrapper {
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-form-header {
+  margin-bottom: 2rem;
+}
+
+.login-form-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #2C2017;
+  margin-bottom: 0.5rem;
+}
+
+.login-form-subtitle {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.login-link {
+  color: #D4522A;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+.login-link:hover {
+  color: #bf4722;
+  text-decoration: underline;
+}
+
+/* ── Formulário ───────────────────────────────── */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.login-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.login-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #2C2017;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.login-required {
+  color: #D4522A;
+}
+
+.login-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.login-input-icon {
+  position: absolute;
+  left: 1rem;
+  color: #3D7A7A;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.login-input {
+  width: 100%;
+  padding: 0.9rem 1rem 0.9rem 2.8rem;
+  border: 2px solid rgba(44, 32, 23, 0.12);
+  border-radius: 12px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  color: #2C2017;
+  background: #fafafa;
+  transition: border-color 0.2s, background-color 0.2s, box-shadow 0.2s;
+}
+
+.login-input::placeholder {
+  color: #aaa;
+}
+
+.login-input:hover {
+  border-color: rgba(44, 32, 23, 0.2);
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: #3D7A7A;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(61, 122, 122, 0.1);
+}
+
+.login-input.error {
+  border-color: #D4522A;
+  background: #fff5f5;
+}
+
+.login-input.error:focus {
+  box-shadow: 0 0 0 4px rgba(212, 82, 42, 0.1);
+}
+
+/* Toggle password */
+.login-toggle-password {
+  position: absolute;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.login-toggle-password:hover {
+  color: #3D7A7A;
+}
+
+/* ── Mensagens de erro ───────────────────────── */
+.login-error {
+  font-size: 0.8rem;
+  color: #D4522A;
+  font-weight: 600;
+  min-height: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.login-error::before {
+  content: '⚠ ';
+}
+
+/* ── Opções (lembrar / esqueci) ───────────────── */
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.login-remember {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  color: #555;
+  font-weight: 600;
+}
+
+.login-remember input[type="checkbox"] {
+  display: none;
+}
+
+.login-checkmark {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #3D7A7A;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.login-remember input[type="checkbox"]:checked + .login-checkmark {
+  background: #3D7A7A;
+  border-color: #3D7A7A;
+}
+
+.login-remember input[type="checkbox"]:checked + .login-checkmark::after {
+  content: '✓';
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.login-forgot {
+  color: #3D7A7A;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+.login-forgot:hover {
+  color: #D4522A;
+}
+
+/* ── Botão Entrar ─────────────────────────────── */
+.login-submit-btn {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #D4522A 0%, #bf4722 100%);
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 15px rgba(212, 82, 42, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 82, 42, 0.45);
+}
+
+.login-submit-btn:active {
+  transform: translateY(0);
+}
+
+.login-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Loader no botão */
+.login-btn-loader {
+  display: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: login-spin 0.8s linear infinite;
+}
+
+.login-submit-btn.loading .login-btn-text {
+  opacity: 0.7;
+}
+
+.login-submit-btn.loading .login-btn-loader {
+  display: block;
+}
+
+@keyframes login-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Alerta de erro ──────────────────────────── */
+.login-alert {
+  display: none;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.login-alert.show {
+  display: flex;
+}
+
+.login-alert-error {
+  background: #fff5f5;
+  color: #D4522A;
+  border: 1px solid rgba(212, 82, 42, 0.2);
+}
+
+.login-alert-success {
+  background: #f0fff4;
+  color: #276749;
+  border: 1px solid rgba(39, 103, 73, 0.2);
+}
+
+/* ── Divisor ──────────────────────────────────── */
+.login-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  color: #aaa;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.login-divider::before,
+.login-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(44, 32, 23, 0.1);
+}
+
+/* ── Link voltar para home ────────────────────── */
+.login-home-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #3D7A7A;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+  padding: 0.5rem;
+}
+
+.login-home-link:hover {
+  color: #D4522A;
+}
+
+/* ── Footer simplificado ──────────────────────── */
+.login-footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.85rem;
+  color: rgba(44, 32, 23, 0.5);
+  background: #F5EDD8;
+}
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVIDADE
+   ═══════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .login-container {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .login-visual {
+    display: none;
+  }
+
+  .login-form-wrapper {
+    padding: 2rem 1.5rem;
+  }
+
+  .login-form-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-main {
+    padding: 1rem;
+  }
+
+  .login-container {
+    border-radius: 16px;
+  }
+
+  .login-form-wrapper {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .login-options {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: flex-start;
+  }
+}

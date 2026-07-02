@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Horizonte Turismo — Explore passeios por categoria no Ceará. Praias, trilhas, museus, gastronomia e passeios históricos.">
+  <title>Categoria — Horizonte Turismo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="categoria.css">
+<base target="_blank">
+</head>
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header>
+    <nav aria-label="Navegação principal">
+      <a href="index.html" class="logo" aria-label="Horizonte Turismo — página inicial">
+        <div class="logo-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </div>
+        <span class="logo-text">
+          Horizonte
+          <span class="logo-sub">Turismo</span>
+        </span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="index.html#categorias">Categorias</a></li>
+        <li><a href="index.html#mais-procurados">Mais Procurados</a></li>
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="cadastro.html" class="nav-icon-link" aria-label="Cadastrar-se">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          <span class="nav-icon-text">Cadastro</span>
+        </a>
+        <a href="roteiro.html" class="nav-icon-link" aria-label="Meu Roteiro">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+          </svg>
+          <span class="nav-icon-text">Meu Roteiro</span>
+        </a>
+      </div>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <ul role="list">
+        <li><a href="index.html" class="mobile-link">Início</a></li>
+        <li><a href="index.html#categorias" class="mobile-link">Categorias</a></li>
+        <li><a href="index.html#mais-procurados" class="mobile-link">Mais Procurados</a></li>
+        <li><a href="index.html#sobre" class="mobile-link">Sobre</a></li>
+        <li><a href="index.html#contato" class="mobile-link">Contato</a></li>
+        <li><a href="cadastro.html" class="mobile-link">Cadastro</a></li>
+        <li><a href="roteiro.html" class="mobile-link">Meu Roteiro</a></li>
+      </ul>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ==================== HERO DA CATEGORIA ==================== -->
+    <section id="categoria-hero" aria-labelledby="categoria-titulo">
+      <div class="categoria-hero-bg" aria-hidden="true"></div>
+      <div class="categoria-hero-content container">
+        <div class="categoria-breadcrumb">
+          <a href="index.html">Início</a>
+          <span aria-hidden="true">/</span>
+          <span id="breadcrumb-categoria">Categoria</span>
+        </div>
+        <h1 class="categoria-hero-title display" id="categoria-titulo">
+          <span class="highlight" id="nome-categoria">Carregando...</span>
+        </h1>
+        <p class="categoria-hero-desc" id="desc-categoria">
+          Descubra os melhores passeios e experiências desta categoria no Ceará.
+        </p>
+      </div>
+      <div class="hero-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 50 C360 0 1080 0 1440 50 L1440 50 L0 50Z" fill="#F5EDD8"/>
+        </svg>
+      </div>
+    </section>
+
+
+    <!-- ==================== LISTAGEM DE PASSEIOS ==================== -->
+    <section id="listagem-passeios" aria-labelledby="listagem-titulo">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag" id="section-tag-categoria">Passeios Disponíveis</span>
+          <h2 class="section-title" id="listagem-titulo">
+            <span class="highlight" id="titulo-listagem">Passeios</span> da Categoria
+          </h2>
+          <p class="section-desc">Clique em qualquer passeio para ver mais detalhes e adicionar ao seu roteiro.</p>
+        </header>
+
+        <!-- Container para os cards de passeios (populado via JS) -->
+        <div class="cards-grid listagem-grid" id="passeios-container">
+          <!-- Cards serão inseridos dinamicamente pelo JavaScript -->
+        </div>
+
+        <!-- Mensagem de erro ou vazio -->
+        <div id="mensagem-erro" class="mensagem-erro" style="display: none;">
+          <p>Nenhum passeio encontrado para esta categoria.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="container footer-content">
+      <div>
+        <h3 class="footer-logo display">Horizonte Turismo</h3>
+        <p class="footer-desc">
+          Criando experiências inesquecíveis e conectando pessoas aos
+          melhores destinos do Ceará e do mundo.
+        </p>
+      </div>
+      <div>
+        <h4>Links Rápidos</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="index.html#categorias">Categorias</a></li>
+          <li><a href="index.html#mais-procurados">Mais Procurados</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+          <li><a href="roteiro.html">Meu Roteiro</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Institucional</h4>
+        <ul class="footer-links">
+          <li><a href="index.html#sobre">Quem somos</a></li>
+          <li><a href="#">Missão e visão</a></li>
+          <li><a href="#">Política de privacidade</a></li>
+          <li><a href="#">Termos de uso</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul class="footer-links">
+          <li>contato@horizonteturismo.com</li>
+          <li>(88) 99999-9999</li>
+          <li>Itapajé — CE</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Horizonte Turismo. Todos os direitos reservados. | Universidade Federal do Ceará — Programação Web
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="categoria.js"></script>
+</body>
+</html>

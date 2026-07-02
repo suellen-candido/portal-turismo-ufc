@@ -15,8 +15,8 @@
 document.addEventListener('DOMContentLoaded', function() {
 
   /* ── CONSTANTES E CONFIGURAÇÕES ──────────────── */
-  const API_BASE_URL = '/api';  // Base da API backend
-  const USE_MOCK = true;        // true = usa dados mock; false = consome API real
+  const API_BASE_URL = 'http://localhost:3000/api';  // Base da API backend
+  const USE_MOCK = false;       // true = usa dados mock; false = consome API real
 
   /* ── DADOS MOCK (simulação do backend) ───────── */
   const categoriasMock = [

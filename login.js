@@ -137,79 +137,57 @@ document.addEventListener('DOMContentLoaded', function() {
     submitBtn.classList.add('loading');
     submitBtn.disabled = true;
 
-    /* Simula requisição ao backend */
     const dados = {
-      email: emailInput.value.trim(),
+      identificador: emailInput.value.trim(),
       senha: senhaInput.value
     };
 
-    /* 
-      AQUI SERIA A CHAMADA REAL AO BACKEND:
+    const API_BASE_URL = 'http://localhost:3000/api';
 
-      fetch('/api/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(dados)
+    fetch(API_BASE_URL + '/usuarios/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(dados)
+    })
+      .then(async function(response) {
+        const resultado = await response.json();
+        return { ok: response.ok, resultado };
       })
-      .then(response => response.json())
-      .then(data => { ... })
-      .catch(error => { ... });
-    */
+      .then(function({ ok, resultado }) {
+        submitBtn.classList.remove('loading');
+        submitBtn.disabled = false;
 
-    /* Simulação de autenticação (para demonstração) */
-    setTimeout(function() {
-      submitBtn.classList.remove('loading');
-      submitBtn.disabled = false;
+        if (ok) {
+          /* Guarda o token JWT para usar nas próximas requisições */
+          localStorage.setItem('token', resultado.access_token);
+          localStorage.setItem('usuario', JSON.stringify(resultado.usuario));
 
-      /* 
-        Credenciais de teste para demonstração:
-        - E-mail: teste@email.com
-        - Senha: 123456
+          alertBox.className = 'login-alert login-alert-success show';
+          alertText.textContent = 'Login realizado com sucesso! Redirecionando...';
 
-        Ou qualquer login/senha com os critérios mínimos
-        será aceito nesta simulação.
-      */
-      const email = dados.email.toLowerCase();
-      const senha = dados.senha;
-
-      /* Simulação: aceita qualquer e-mail válido + senha >= 6 */
-      const autenticado = (
-        (email === 'teste@email.com' && senha === '123456') ||
-        (email.length >= 4 && senha.length >= 6)
-      );
-
-      if (autenticado) {
-        /* Sucesso: mostra mensagem e redireciona */
-        alertBox.className = 'login-alert login-alert-success show';
-        alertText.textContent = 'Login realizado com sucesso! Redirecionando...';
-
-        /* Salva no sessionStorage que o usuário está logado */
-        sessionStorage.setItem('usuarioLogado', JSON.stringify({
-          email: dados.email,
-          loginEm: new Date().toISOString()
-        }));
-
-        /* Redireciona para o roteiro após 1.5 segundos */
-        setTimeout(function() {
-          window.location.href = 'roteiro.html';
-        }, 1500);
-
-      } else {
-        /* Erro: credenciais inválidas */
+          setTimeout(function() {
+            window.location.href = 'roteiro.html';
+          }, 1500);
+        } else {
+          alertBox.className = 'login-alert login-alert-error show';
+          alertText.textContent = resultado.mensagem || 'E-mail ou senha incorretos.';
+          senhaInput.value = '';
+          senhaInput.focus();
+        }
+      })
+      .catch(function(erro) {
+        console.error('Erro ao autenticar:', erro);
+        submitBtn.classList.remove('loading');
+        submitBtn.disabled = false;
         alertBox.className = 'login-alert login-alert-error show';
-        alertText.textContent = 'E-mail ou senha incorretos. Tente novamente.';
-        senhaInput.value = '';
-        senhaInput.focus();
-      }
-
-    }, 1500); /* Simula delay de rede */
+        alertText.textContent = 'Não foi possível conectar ao servidor. Tente novamente.';
+      });
   });
 
   /* ── Verifica se já está logado ──────────────── */
-  const usuarioLogado = sessionStorage.getItem('usuarioLogado');
-  if (usuarioLogado) {
-    /* Se já estiver logado, pode redirecionar direto */
-    /* Descomente a linha abaixo se quiser forçar login toda vez */
+  const tokenExistente = localStorage.getItem('token');
+  if (tokenExistente) {
+    // Já está logado — descomente se quiser redirecionar direto
     // window.location.href = 'roteiro.html';
   }
 

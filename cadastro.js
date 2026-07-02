@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let soma = 0;
     let resto;
 
-    if (/^(\d){10}$/.test(valor)) return mostrarErro(campos.cpf, erros.cpf, 'CPF inválido');
+    if (/^(\d){10}$/.test(valor)) return mostrarErro(campos.cpf, erros.cpf, 'CPF inválido');
 
     for (let i = 1; i <= 9; i++) soma += parseInt(valor.substring(i - 1, i)) * (11 - i);
     resto = (soma * 10) % 11;
@@ -338,44 +338,55 @@ document.addEventListener('DOMContentLoaded', function() {
     submitBtn.classList.add('loading');
     submitBtn.disabled = true;
 
-    /* Simula envio ao backend */
-    setTimeout(function() {
-      submitBtn.classList.remove('loading');
-      submitBtn.disabled = false;
+    const dados = {
+      nome: campos.nome.value.trim(),
+      cpf: campos.cpf.value,
+      telefone: campos.telefone.value,
+      email: campos.email.value.trim(),
+      endereco: campos.endereco.value.trim(),
+      cidade: campos.cidade.value.trim(),
+      cidade_origem: campos.cidadeOrigem.value.trim() || null,
+      login: campos.login.value.trim(),
+      senha: campos.senha.value,
+      confirmar_senha: campos.confirmarSenha.value,
+      data_visita: campos.dataVisita.value || null,
+      preferencias: campos.preferencias.value.trim() || null
+    };
 
-      /* Monta os dados para exibição (simulação do GET) */
-      const dados = {
-        nome: campos.nome.value.trim(),
-        cpf: campos.cpf.value,
-        telefone: campos.telefone.value,
-        email: campos.email.value.trim(),
-        endereco: campos.endereco.value.trim(),
-        cidade: campos.cidade.value.trim(),
-        cidade_origem: campos.cidadeOrigem.value.trim() || 'Não informado',
-        login: campos.login.value.trim(),
-        senha: '********',
-        data_visita: campos.dataVisita.value || 'Não informada',
-        preferencias: campos.preferencias.value.trim() || 'Não informadas',
-        termos: 'Aceito'
-      };
+    const API_BASE_URL = 'http://localhost:3000/api';
 
-      /* Exibe sucesso */
-      alertBox.className = 'cadastro-alert cadastro-alert-success show';
-      alertText.textContent = 'Cadastro realizado com sucesso! Redirecionando...';
+    fetch(API_BASE_URL + '/usuarios/cadastro', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(dados)
+    })
+      .then(async function(response) {
+        const resultado = await response.json();
+        return { ok: response.ok, resultado };
+      })
+      .then(function({ ok, resultado }) {
+        submitBtn.classList.remove('loading');
+        submitBtn.disabled = false;
 
-      /* Log dos dados no console (para o professor verificar) */
-      console.log('=== DADOS DO CADASTRO (MÉTODO GET) ===');
-      console.table(dados);
+        if (ok) {
+          alertBox.className = 'cadastro-alert cadastro-alert-success show';
+          alertText.textContent = 'Cadastro realizado com sucesso! Redirecionando...';
 
-      /* Salva no sessionStorage */
-      sessionStorage.setItem('cadastroRealizado', JSON.stringify(dados));
-
-      /* Redireciona após 2 segundos */
-      setTimeout(function() {
-        window.location.href = 'login.html';
-      }, 2000);
-
-    }, 1500);
+          setTimeout(function() {
+            window.location.href = 'login.html';
+          }, 2000);
+        } else {
+          alertBox.className = 'cadastro-alert cadastro-alert-error show';
+          alertText.textContent = resultado.mensagem || 'Erro ao cadastrar. Verifique os dados.';
+        }
+      })
+      .catch(function(erro) {
+        console.error('Erro ao cadastrar:', erro);
+        submitBtn.classList.remove('loading');
+        submitBtn.disabled = false;
+        alertBox.className = 'cadastro-alert cadastro-alert-error show';
+        alertText.textContent = 'Não foi possível conectar ao servidor. Tente novamente.';
+      });
   });
 
 });

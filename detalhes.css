@@ -1,0 +1,268 @@
+/* =====================================================
+   HORIZONTE TURISMO — Estilos da Página de Detalhes
+   Disciplina: Programação Web — UFC Itapajé
+===================================================== */
+
+/* ── HERO ───────────────────────────────────────── */
+#detalhes-hero {
+  position: relative;
+  min-height: 50vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 8rem 0 3.5rem;
+  background: linear-gradient(135deg, #2C3E3E 0%, #1a2a2a 100%);
+  overflow: hidden;
+}
+
+.detalhes-hero-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.35;
+}
+
+.detalhes-hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  max-width: 800px;
+}
+
+.detalhes-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.detalhes-breadcrumb a {
+  color: #E8A04B;
+}
+
+.detalhes-breadcrumb a:hover {
+  color: #fff;
+}
+
+.detalhes-badge-categoria {
+  display: inline-block;
+  background: rgba(212, 82, 42, 0.92);
+  color: #fff;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.detalhes-hero-title {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.15;
+  margin-bottom: 0.8rem;
+  color: #fff;
+}
+
+.detalhes-hero-local {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+}
+
+/* ── CORPO ──────────────────────────────────────── */
+#detalhes-corpo {
+  background-color: #F5EDD8;
+  padding: 3.5rem 0 5rem;
+}
+
+.detalhes-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 3rem;
+  align-items: start;
+}
+
+.detalhes-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.detalhes-rating .stars {
+  color: #E8A04B;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+
+.detalhes-rating .rating-value {
+  font-weight: 700;
+  color: #2C2017;
+}
+
+.detalhes-rating .rating-count {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.detalhes-subtitulo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #2C2017;
+  margin: 2rem 0 0.75rem;
+}
+
+.detalhes-subtitulo:first-of-type {
+  margin-top: 0;
+}
+
+.detalhes-texto {
+  color: #444;
+  line-height: 1.7;
+  font-size: 0.98rem;
+}
+
+.detalhes-lista {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.detalhes-lista li {
+  background: white;
+  border: 1px solid rgba(61, 122, 122, 0.25);
+  color: #3D7A7A;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+}
+
+/* ── CARD DE RESERVA (SIDEBAR) ─────────────────── */
+.detalhes-reserva-card {
+  background: white;
+  border-radius: 20px;
+  padding: 1.75rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 6rem;
+}
+
+.detalhes-reserva-valor {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #D4522A;
+  margin-bottom: 1rem;
+}
+
+.detalhes-reserva-valor-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #888;
+}
+
+.detalhes-reserva-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(44, 32, 23, 0.08);
+}
+
+.detalhes-reserva-btn {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 999px;
+  background-color: #D4522A;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.detalhes-reserva-btn:hover {
+  background-color: #bf4722;
+  transform: translateY(-1px);
+}
+
+.detalhes-reserva-btn:disabled {
+  background-color: #c9a98f;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.detalhes-reserva-aviso {
+  margin-top: 0.9rem;
+  font-size: 0.82rem;
+  color: #888;
+  text-align: center;
+}
+
+.detalhes-reserva-aviso a {
+  color: #3D7A7A;
+  font-weight: 700;
+}
+
+/* ── LOADING / ERRO ─────────────────────────────── */
+.detalhes-loading {
+  padding: 8rem 0 3rem;
+  background: linear-gradient(135deg, #2C3E3E 0%, #1a2a2a 100%);
+  min-height: 50vh;
+}
+
+.skeleton-hero {
+  height: 200px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.06) 25%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0.06) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.mensagem-erro {
+  padding: 8rem 0;
+  text-align: center;
+}
+
+.mensagem-erro p {
+  font-size: 1.1rem;
+  color: #666;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+/* ── RESPONSIVIDADE ─────────────────────────────── */
+@media (max-width: 900px) {
+  .detalhes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detalhes-reserva-card {
+    position: static;
+  }
+}
+
+@media (max-width: 480px) {
+  .detalhes-hero-title {
+    font-size: 1.7rem;
+  }
+}

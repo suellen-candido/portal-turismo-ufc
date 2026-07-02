@@ -11,78 +11,149 @@
 </head>
 <body class="cadastro-page">
 
-  <!-- ==================== HEADER SIMPLES ==================== -->
+  <!-- ==================== HEADER COMPLETO ==================== -->
   <header class="cadastro-header">
-    <a href="index.html" class="logo" aria-label="Horizonte Turismo — voltar para página inicial">
-      <div class="logo-icon" aria-hidden="true">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"/>
-          <line x1="2" y1="12" x2="22" y2="12"/>
-          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-        </svg>
+    <div class="cadastro-header-inner">
+      <a href="index.html" class="logo" aria-label="Horizonte Turismo — voltar para página inicial">
+        <div class="logo-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </div>
+        <span class="logo-text">
+          Horizonte
+          <span class="logo-sub">Turismo</span>
+        </span>
+      </a>
+
+      <nav class="cadastro-nav" aria-label="Navegação principal">
+        <a href="index.html">Início</a>
+        <a href="index.html#categorias">Categorias</a>
+        <a href="index.html#mais-procurados">Mais Procurados</a>
+        <a href="index.html#sobre">Sobre</a>
+        <a href="index.html#contato">Contato</a>
+      </nav>
+
+      <div class="cadastro-header-actions">
+        <a href="cadastro.html" class="cadastro-header-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          <span>Cadastro</span>
+        </a>
+        <a href="roteiro.html" class="cadastro-header-link cadastro-header-link-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+          </svg>
+          <span class="cadastro-badge">3</span>
+          <span>Meu Roteiro</span>
+        </a>
       </div>
-      <span class="logo-text">
-        Horizonte
-        <span class="logo-sub">Turismo</span>
-      </span>
-    </a>
+    </div>
   </header>
 
   <!-- ==================== MAIN CADASTRO ==================== -->
   <main class="cadastro-main">
-    <div class="cadastro-container">
+    <div class="cadastro-auth-section">
 
-      <!-- Lado esquerdo: imagem/ilustração -->
-      <div class="cadastro-visual" aria-hidden="true">
-        <div class="cadastro-visual-content">
-          <h2 class="cadastro-visual-title display">Junte-se a nós!</h2>
-          <p class="cadastro-visual-text">
+      <!-- Lado esquerdo: foto em tela cheia -->
+      <div class="cadastro-hero" aria-hidden="true">
+        <div class="cadastro-hero-overlay"></div>
+        <div class="cadastro-hero-content">
+          <h2 class="cadastro-hero-title display">Descubra o <span class="highlight">Ceará</span><br>no seu ritmo</h2>
+          <p class="cadastro-hero-text">
             Cadastre-se gratuitamente e tenha acesso a roteiros exclusivos,
             promoções especiais e a melhor experiência de turismo no Ceará.
           </p>
-          <ul class="cadastro-benefits">
+          <ul class="cadastro-hero-stats">
             <li>
-              <span class="cadastro-check">✓</span>
+              <span class="cadastro-hero-stat-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 20l-5.447-2.724A1 1 0 0 1 3 16.382V5.618a1 1 0 0 1 1.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0 0 21 18.382V7.618a1 1 0 0 0-.553-.894L15 4m0 13V4m0 0L9 7"/>
+                </svg>
+              </span>
               Roteiros personalizados
             </li>
             <li>
-              <span class="cadastro-check">✓</span>
+              <span class="cadastro-hero-stat-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="16" rx="2"/>
+                  <line x1="8" y1="2" x2="8" y2="6"/>
+                  <line x1="16" y1="2" x2="16" y2="6"/>
+                  <line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+              </span>
               Reservas simplificadas
             </li>
             <li>
-              <span class="cadastro-check">✓</span>
+              <span class="cadastro-hero-stat-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </span>
               Atendimento prioritário
             </li>
             <li>
-              <span class="cadastro-check">✓</span>
+              <span class="cadastro-hero-stat-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.59 13.41L11 3.83A2 2 0 0 0 9.59 3.24H4a1 1 0 0 0-1 1v5.59a2 2 0 0 0 .59 1.41l9.58 9.59a2 2 0 0 0 2.82 0l4.6-4.6a2 2 0 0 0 0-2.82z"/>
+                  <circle cx="7.5" cy="7.5" r="1.5"/>
+                </svg>
+              </span>
               Descontos exclusivos
             </li>
           </ul>
         </div>
-        <div class="cadastro-visual-overlay"></div>
       </div>
 
-      <!-- Lado direito: formulário -->
-      <div class="cadastro-form-wrapper">
-        <div class="cadastro-form-header">
-          <h1 class="cadastro-form-title">Cadastro de Visitante</h1>
-          <p class="cadastro-form-subtitle">
-            Já tem conta?
-            <a href="login.html" class="cadastro-link">Entrar</a>
-          </p>
-        </div>
+      <!-- Lado direito: card flutuante com o formulário -->
+      <div class="cadastro-card-area">
+        <svg class="cadastro-palms" width="150" height="170" viewBox="0 0 150 170" aria-hidden="true">
+          <g fill="none" stroke="rgba(44,32,23,0.35)" stroke-width="2" stroke-linecap="round">
+            <path d="M40 170V90"/>
+            <path d="M40 92c-14-6-22-18-24-30"/>
+            <path d="M40 92c10-10 14-22 12-36"/>
+            <path d="M40 92c-6-14-4-28 4-40"/>
+            <path d="M40 92c14-4 24-14 28-26"/>
+            <path d="M100 170V110"/>
+            <path d="M100 112c-10-4-16-13-17-22"/>
+            <path d="M100 112c7-7 10-16 8-26"/>
+            <path d="M100 112c10-3 17-10 20-19"/>
+          </g>
+        </svg>
 
-        <!-- Alerta geral -->
-        <div class="cadastro-alert cadastro-alert-error" id="cadastro-alert" role="alert" aria-live="polite">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <line x1="12" y1="8" x2="12" y2="12"/>
-            <line x1="12" y1="16" x2="12.01" y2="16"/>
-          </svg>
-          <span id="cadastro-alert-text"></span>
-        </div>
+        <div class="cadastro-card">
+          <div class="cadastro-card-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <line x1="19" y1="8" x2="19" y2="14"/>
+              <line x1="22" y1="11" x2="16" y2="11"/>
+            </svg>
+          </div>
 
-        <form id="cadastro-form" class="cadastro-form" action="#" method="GET" novalidate>
+          <div class="cadastro-form-header">
+            <h1 class="cadastro-form-title display">Crie sua conta</h1>
+            <p class="cadastro-form-subtitle">
+              Já tem conta?
+              <a href="login.html" class="cadastro-link">Entrar</a>
+            </p>
+          </div>
+
+          <!-- Alerta geral -->
+          <div class="cadastro-alert cadastro-alert-error" id="cadastro-alert" role="alert" aria-live="polite">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+            <span id="cadastro-alert-text"></span>
+          </div>
+
+          <form id="cadastro-form" class="cadastro-form" action="#" method="GET" novalidate>
 
           <!-- ==================== DADOS PESSOAIS ==================== -->
           <fieldset class="cadastro-fieldset">
@@ -476,8 +547,13 @@
             </button>
           </div>
 
-        </form>
+          </form>
+        </div>
       </div>
+
+      <svg class="cadastro-wave" viewBox="0 0 1440 110" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,60 C240,110 480,10 720,40 C960,70 1200,110 1440,55 L1440,110 L0,110 Z"></path>
+      </svg>
     </div>
   </main>
 
